@@ -1,0 +1,32 @@
+\item {\bf Double Descent on Linear Models}
+
+% {\bf Note:} This question may require knowledge on double descent that is covered on Wed of Week 5. 
+
+In this problem, you will empirically observe the sample-wise double descent phenomenon. That is, the validation losses of some learning algorithms or estimators do not monotonically decrease as we have more training examples, but instead have a curve with two U-shaped parts. The double descent phenomenon can be observed even for simple linear models. In this question, we consider the following setup. Let $\{(x^{(i)},y^{(i)})\}_{i=1}^{n}$ be the training dataset. Let $X\in\R^{n\times d}$ be the matrix representing the inputs (i.e., the $i$-th row of $X$ corresponds to $x^{(i)})$), and $\vec{y}\in\R^{n}$ the vector representing the labels (i.e., the $i$-th row of $\vec{y}$ corresponds to $y^{(i)})$):
+$$
+X=
+\begin{bmatrix}
+	- & x^{(1)} & - \\
+	- & x^{(2)} & - \\
+	\vdots & \vdots & \vdots\\
+	- & x^{(n)} & - 
+\end{bmatrix},\qquad
+\vec{y}=
+\begin{bmatrix}
+	y^{(1)} \\
+	y^{(2)}\\
+	\vdots\\
+	y^{(n)}
+\end{bmatrix}.
+$$
+Similarly, we use $X_v\in \R^{m\times d}, \vec{y}_v\in \R^{m}$ to represent the validation dataset, where $m$ is the size of the validation dataset. We assume that the data are generated with $d=500$. 
+
+In this question, we consider \emph{regularized} linear regression. For a regularization level $\lambda\ge 0$, define the regularized cost function $$J_\lambda(\beta)=\frac{1}{2}\|X\beta-\vec{y}\|_2^2+\frac{\lambda}{2}\|\beta\|_2^2,$$ and its minimizer $\hat{\beta}_\lambda=\arg\min_{\beta\in \R^{d}}J_\lambda(\beta).$
+
+\begin{enumerate}
+  \input{04-doubledescent/01-solution}
+
+  \input{04-doubledescent/02-unreg}
+
+  \input{04-doubledescent/03-reg}
+\end{enumerate}

@@ -1,0 +1,15 @@
+\item \points{1b} \textbf{Chain rule for KL divergence.}
+
+The KL divergence between 2
+conditional distributions $P(X\mid Y),Q(X\mid Y)$ is defined as follows:
+\[
+\KL(P(X\mid Y)\mid \mid Q(X\mid Y))
+= \sum_y P(y) \left(\sum_x P(x\mid y)\log\frac{P(x\mid y)}{Q(x\mid y)}\right)
+\]
+This can be thought of as the expected KL divergence between the
+corresponding conditional distributions on $x$ (that is, between
+$P(X\mid Y=y)$ and $Q(X\mid Y=y)$), where the expectation is taken over the
+random $y$.
+
+Prove the following chain rule for KL divergence:
+$$ \KL(P(X,Y)\mid \mid Q(X,Y)) = \KL(P(X)\mid \mid Q(X)) + \KL(P(Y\mid X)\mid \mid Q(Y\mid X)). $$

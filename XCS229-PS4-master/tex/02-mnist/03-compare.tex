@@ -1,0 +1,16 @@
+\item \points{2c}
+All this while the test cases have avoided the test data completely. Now that
+you have convinced yourself that the model is working as expected (i.e, the
+observations you made in the previous part matches what you learnt in class
+about regularization), it is finally time to measure the model performance on
+the test set. Once we measure the test set performance, we report it (whatever
+value it may be), and NOT go back and refine the model any further.
+
+Autograder test case |2c-1-basic| will train your model and then evaluate its performance on the test data for both the regularized and non-regularized training strategies.  Before running this test case, edit line 361 of |src-mnist/grader.py| to state |skip = False| (model plotting/training is disabled by default to run the auotgrader faster).
+
+You should have accuracy close to 0.7855 without regularization, and 0.819 with regularization.
+
+Note: Even if you do not have precisely these numbers, you should observe better test accuracy with regularization than without.
+
+Fashion-MNIST is challenging dataset compared to MNIST. With the similar hyperparameters, the accuracy of regularized model was 0.96 for MNIST dataset. Once you finished the assignment with given network specification, we encourage you to improve the accuracy by modifying the neural network model on your environment, such as adding more hidden layers, changing the hidden layer size, or using a different initialization. Once you do, please share your accuracy and model on
+the slack PS4 channel!

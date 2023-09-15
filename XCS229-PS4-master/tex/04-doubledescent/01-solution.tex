@@ -1,0 +1,13 @@
+\item \points{4a}
+\textbf{Derive closed-form solution.}
+
+In this question, we derive the closed-form solution of $\hat{\beta}_\lambda.$ \textbf{Prove} that when $\lambda>0$, 
+\begin{equation}
+	\hat{\beta}_\lambda=(X^\top X+\lambda I_{d\times d})^{-1}X^\top \vec{y} \label{equ:sol}
+\end{equation} (recall that $I_{d\times d}\in \R^{d\times d}$ is the identity matrix.)
+
+\textbf{Note:} $\lambda=0$ is a special case here. When $\lambda=0$, $(X^\top X+\lambda I_{d\times d})$ could be singular. Therefore, there might be more than one solutions that minimize $J_0(\beta)$. In this case, we define $\hat{\beta}_0$ in the following way:
+\begin{align}
+	\hat{\beta}_0=(X^\top X)^{+}X^\top \vec{y}.
+\end{align}
+where $(X^\top X)^{+}$ denotes the \href{https://en.wikipedia.org/wiki/Moore-Penrose_inverse}{Moore-Penrose pseudo-inverse} of $X^\top X$. You don't need to prove the case when $\lambda=0$, but this definition is useful in the following sub-questions. 
