@@ -1,0 +1,12 @@
+name: XCS229
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - notebook
+  - numpy>=1.16.5,<1.23.0
+  - matplotlib>=3.1
+  - scipy
+  - pillow
+  - libtiff>=4.1.0
+  - scikit-learn
