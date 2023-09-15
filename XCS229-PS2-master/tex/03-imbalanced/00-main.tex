@@ -1,0 +1,27 @@
+\item {\bf Learning Imbalanced Dataset}
+
+In this problem, we study how to learn a classifier from an imbalanced dataset, where the marginal distribution 
+of the classes/labels are imbalanced. Imbalanced datasets are ubiquitous in real-world applications. For example, 
+in the spam detection problem, the training dataset usually has only a small fraction of spam emails 
+(positive examples) but a large fraction of ordinary emails (negative examples). 
+For simplicity, we consider binary classification problem where the labels are in $\{0,1\}$ 
+and the number of positive examples is much smaller than the number of negative examples.
+
+\textbf{Note: We will be using the logistic regression classifier defined in problem 1. If you haven't done so 
+already, finish implementing the Logistic Regression class in src-linear/submission/logreg.py}
+
+\textbf{Code Deliverables}
+\begin{itemize}
+    \item \texttt{src-imbalanced/submission.py}
+    \item \texttt{src-imbalanced/logreg.py} \textbf{   **Copied over from src-linear/submission/logreg.py}
+\end{itemize}
+
+\begin{enumerate}
+    \input{03-imbalanced/01-evaluation}
+
+    \input{03-imbalanced/02-vanilla}
+
+    \input{03-imbalanced/03-proof}
+
+    \input{03-imbalanced/04-coding}
+\end{enumerate}

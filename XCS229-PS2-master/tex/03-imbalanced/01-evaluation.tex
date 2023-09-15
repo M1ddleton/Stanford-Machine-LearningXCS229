@@ -1,0 +1,57 @@
+\item \textbf{Evaluation metrics}
+
+In this sub-question, we discuss the common evaluation metrics for imbalanced dataset. Suppose we have a validation dataset and for some $\rho \in (0,1)$, we assume that $\rho$ fraction of the validation examples are positive examples (with label 1), and $1-\rho$ fraction of them are negative examples (with label 0). 
+
+
+Define the accuracy as
+\begin{align*}
+A \triangleq %\frac{TN+TN}{TP+TN + FP+FN} 
+\frac{\# \textrm{examples that are predicted correctly by the classifier}}{\# \textrm{examples}} 
+\end{align*}
+(i) \points{3ai} Show that for any dataset with $\rho$ fraction of positive examples and $1-\rho$ fraction of negative examples, there exists a (trivial) classifier with accuracy at least $1-\rho$. 
+\newline
+\\
+The statement above suggests that the accuracy is not an ideal evaluation metric when $\rho$ is close to 0. E.g., imagine that for spam detection $\rho$ can be smaller than 1\%. The statement suggests there is a trivial classifier that gets more than 99\% accuracy. This could be misleading ---  99\% seems to be almost perfect, but actually you don't need to learn anything from the dataset to achieve it. 
+
+Therefore, for imbalanced dataset, we need more informative evaluation metrics. We define the number of true positive, true negative, false positive, false negative examples as
+\begin{align*}
+TP & \triangleq \# \textrm{ positive examples with a correct (positive) prediction} \\
+TN & \triangleq \# \textrm{ negative examples with a correct (negative) prediction} \\
+FP & \triangleq \# \textrm{ negative examples with a incorrect (positive) prediction} \\
+FN & \triangleq \# \textrm{ positive examples with a incorrect (negative) prediction} 
+\end{align*}
+
+Define the accuracy of positive examples  as 
+\newcommand{\recall}{\textup{recall}}
+\begin{align*}
+A_1 &\triangleq \frac{TP}{TP + FN} = \frac{\#  \textrm{ positive examples with a correct (positive) prediction}}{\# \textrm{ positive examples}}\nonumber\\
+\end{align*}
+Define the accuracy of negative examples as 
+\begin{align*}
+A_0 & \triangleq \frac{TN}{TN + FP} = \frac{\#  \textrm{ negative examples with a correct (negative) prediction}}{\# \textrm{ negative examples}}
+\end{align*}
+
+We define the balanced accuracy as 
+\begin{align}
+\overline{A} \triangleq \frac{1}{2} \left(A_0+A_1\right)
+\label{eq:A_bar}
+\end{align}
+With these notations, we can verify that the accuracy is equal to $
+A =\frac{TP+TN}{TP+TN + FP+FN} $. 
+
+(ii) \points{3aii} Show that 
+\begin{align*}
+\rho = \frac{TP + FN}{TP+TN + FP+FN}
+\end{align*}
+and 
+\begin{align}
+A = \rho \cdot A_1 + (1-\rho)A_0
+\label{eq:A}
+\end{align}
+
+
+Comparing equation \eqref{eq:A_bar} and \eqref{eq:A}, we can see that the accuracy and balanced accuracy are both linear combination of $A_0$ and $A_1$ but with different weighting. 
+
+(iii) \points{3aiii} Show that the trivial classifier you constructed for part (i) has balanced accuracy 50\%. 
+
+Partly because of (iii), the balanced accuracy $\overline{A}$ is often a preferable evaluation metric than the accuracy $A$. Sometimes people also report the accuracies for the two classes ($A_0$ and $A_1$) to demonstrate the performance for each class. 

@@ -1,0 +1,21 @@
+\item \points{3c} \textbf{Re-sampling/Re-weighting Logistic Regression}
+
+The relatively low accuracy for the minority class and the resulting low balanced accuracy are undesirable for many applications. Various methods have been proposed to improve the accuracy for the minority class, and learning imbalanced datasets is  an active open research direction. Here we introduce a simple and classical re-sampling/re-weighting technique that helps improve the balanced accuracy in most of the cases. 
+
+We observe that the logistic regression algorithm works well for the accuracy but not for the balanced accuracy. Let $\mathcal{D} = \{(x^{(i)}, y^{(i)})\}_{i=1}^n$ denote the existing training dataset. We will create a new dataset $\mathcal{D}'$ such that the accuracy on $\mathcal{D}'$ is the same as the balanced accuracy on $\mathcal{D}$.
+
+Assume $\rho < 1/2$ without loss of generality, and let $\kappa = \frac{\rho}{1-\rho}$. This means the number of positive examples is $\kappa$ times the number of negative examples in $\calD$. Assume for convenience $1/\kappa$ is an integer.\footnote{otherwise we can round up to the nearest integer with introducing a slight approximation.} Let $\mathcal{D}'$ be the dataset that contain each negative example once and $1/\kappa$ repetitions of each positive example in $\calD$. Then we will apply the logistic regression on the new dataset $\mathcal{D}'$.  
+
+{\bf Prove that} for any classifier, the balanced accuracy on $\calD$ is equal to the accuracy on $\calD'$. Moreover, {\bf show that} the average empirical loss for logistical regression on the dataset $\calD'$ is equal to 
+
+
+\begin{align*}
+J(\theta) &= -\frac{1+\kappa}{2n} \sum_{i=1}^\nexp w^{(i)} \left(y^{(i)}\log(h_{\theta}(x^{(i)}))
++  (1 - y^{(i)})\log(1 - h_{\theta}(x^{(i)}))\right),
+\end{align*}
+where $w^{(i)} = 1$ if $y^{(i)} =0$ and $w^{(i)} = 1/\kappa$ if $y^{(i)} = 1$.
+
+
+Observe effectively we are re-weighting the loss function for each example by some constant that depends on the frequency of the class it belongs to.
+
+
