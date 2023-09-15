@@ -1,0 +1,179 @@
+% This contents of this file will be inserted into the _Solutions version of the
+% output tex document.  Here's an example:
+
+% If assignment with subquestion (1.a) requires a written response, you will
+% find the following flag within this document: <SCPD_SUBMISSION_TAG>_1a
+% In this example, you would insert the LaTeX for your solution to (1.a) between
+% the <SCPD_SUBMISSION_TAG>_1a flags.  If you also constrain your answer between the
+% START_CODE_HERE and END_CODE_HERE flags, your LaTeX will be styled as a
+% solution within the final document.
+
+% Please do not use the '<SCPD_SUBMISSION_TAG>' character anywhere within your code.  As expected,
+% that will confuse the regular expressions we use to identify your solution.
+\def\assignmentnum{3 }
+\def\assignmenttitle{XCS229 Problem Set \assignmentnum}
+\input{macros}
+\begin{document}
+\pagestyle{myheadings} \markboth{}{\assignmenttitle}
+
+% <SCPD_SUBMISSION_TAG>_entire_submission
+
+This handout includes space for every question that requires a written response.
+Please feel free to use it to handwrite your solutions (legibly, please).  If
+you choose to typeset your solutions, the |README.md| for this assignment includes
+instructions to regenerate this handout with your typeset \LaTeX{} solutions.
+\ruleskip
+
+\LARGE
+1.a
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_1a
+\begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+\end{answer}
+% <SCPD_SUBMISSION_TAG>_1a
+\clearpage
+
+\LARGE
+1.b
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_1b
+\begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+\end{answer}
+% <SCPD_SUBMISSION_TAG>_1b
+\clearpage
+
+\LARGE
+1.c
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_1c
+\begin{answer}
+  The log-likelihood of an example $(x^{(i)}, y^{(i)})$ is defined as
+  $\ell(\theta) = \log p(y^{(i)} \vert  x^{(i)}; \theta)$. To derive the stochastic
+  gradient ascent rule, use the results in part (a) and the standard GLM
+  assumption that $\eta = \theta^Tx$.
+  \begin{flalign*}
+    \frac{\partial \ell(\theta)}{\partial \theta_j}
+    &= \frac{\partial \log p(y^{(i)} \vert  x^{(i)}; \theta)}{\partial \theta_j}\\
+    &= \frac {\partial \log \left({\frac{1}{y^{(i)}!} \exp(\eta^T y^{(i)} -
+    e^\eta)}\right)} {\partial \theta_j}\\
+    &=\\
+    % ### START CODE HERE ###
+    % ### END CODE HERE ###
+  \end{flalign*}
+
+  Thus the stochastic gradient ascent update rule should be:
+
+  \begin{equation*}
+  \theta_j := \theta_j + \alpha \frac{\partial \ell(\theta)}{\partial \theta_j},
+  \end{equation*}
+
+  which reduces here to:
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+\end{answer}
+% <SCPD_SUBMISSION_TAG>_1c
+\clearpage
+
+\LARGE
+2.a
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_2a
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_2a
+\clearpage
+
+\LARGE
+2.b
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_2b
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_2b
+\clearpage
+
+\LARGE
+2.c
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_2c
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_2c
+\clearpage
+
+\LARGE
+2.d
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_2d
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_2d
+\clearpage
+
+\LARGE
+3.ai
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_3ai
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_3ai
+
+\LARGE
+3.aii
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_3aii
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_3aii
+
+\LARGE
+3.aiii
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_3aiii
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_3aiii
+
+\LARGE
+3.c
+\normalsize
+
+% <SCPD_SUBMISSION_TAG>_3c
+  \begin{answer}
+  % ### START CODE HERE ###
+  % ### END CODE HERE ###
+  \end{answer}
+% <SCPD_SUBMISSION_TAG>_3c
+\clearpage
+
+% <SCPD_SUBMISSION_TAG>_entire_submission
+
+\end{document}
