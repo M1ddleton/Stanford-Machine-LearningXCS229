@@ -1,0 +1,35 @@
+\item \points{4e}
+In the following sub-questions, we consider a slightly more complicated model called quadratically parameterized model. A quadratically parameterized model has two sets of parameters $\theta,\phi\in \R^{d}$. Given a $d$-dimensional input $x\in \R^{d}$, the output of the model is 
+\begin{align}
+	f_{\theta,\phi}(x)=\sum_{k=1}^{d}\theta_k^2 x_k - \sum_{k=1}^{d}\phi_k^2 x_k.\label{eqn:1}
+\end{align}
+Note that $f_{\theta,\phi}(x)$ is linear in its input $x$, but non-linear in its parameters $\theta,\phi.$ Thus, if the goal was to learn the function, one should simply just re-parameterize it with a linear model and use linear regression. However, here we insist on using the parameterization above in Eq.~\eqref{eqn:1} in order to study the implicit regularization effect in models that are nonlinear in the parameters.
+
+\emph{Notations:} To simplify the equations, we define the following notations. For a vector $v\in \R^{d},$ let $v^{\odot 2}$ be its element-wise square (that is, $v^{\odot 2}$ is the vector $[v_1^2, v_2^2,\cdots, v_d^2]\in \R^{d}.$)  For two vectors $v,w\in \R^{d},$ let $v\odot w$ be their element-wise product (that is, $v\odot w$ is the vector $[v_1w_1,v_2w_2,\cdots,v_dw_d]\in \R^{d}.$) Then our model can be written as 
+\begin{align}
+	f_{\theta,\phi}(x)=x^\top (\theta^{\odot 2} -\phi^{\odot 2}).
+\end{align}
+
+Suppose we have a dataset $\{(x^{(i)}, y^{(i)});i=1,\cdots,n\}$ where $x^{(i)}\in \R^{d}$ and $y^{(i)}\in \R$ for all $1\le i\le n,$ and $$y^{(i)}=(x^{(i)})^\top ((\theta^\star)^{\odot 2}- (\phi^\star)^{\odot 2})$$ for some $\theta^\star, \phi^\star\in \R^{d}$.
+Similarly, we use $X\in \R^{n\times d}$ and $\vec{y}\in \R^{n}$ to denote the matrix/vector representing the inputs/labels respectively:
+$$
+X=
+\begin{bmatrix}
+	- & x^{(1)} & - \\
+	- & x^{(2)} & - \\
+	\vdots & \vdots & \vdots\\
+	- & x^{(n)} & - 
+\end{bmatrix},\qquad
+\vec{y}=
+\begin{bmatrix}
+	y^{(1)} \\
+	y^{(2)}\\
+	\vdots\\
+	y^{(n)}
+\end{bmatrix}.
+$$
+Let $J(\theta,\phi)=\frac{1}{4n}\sum_{i=1}^{n}(f_{\theta,\phi}(x^{(i)})-y^{(i)})^2$ be the cost function.
+
+First, when $n<d$ and $XX^\top$ is invertible, \textbf{prove} that there exists infinitely many optimal solutions with zero cost.
+
+\emph{Hint:} Find a mapping between the parameter $\beta$ in linear model and the parameter $\theta,\phi$ in quadratically parameterized model. Then use the conclusion in sub-question (a).

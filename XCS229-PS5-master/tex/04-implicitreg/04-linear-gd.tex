@@ -1,0 +1,10 @@
+\item \points{4d} 
+For this sub-question, we work with the setup of part (a) and (b). In this sub-question, you will prove that the gradient descent algorithm with \emph{zero initialization} always converges to the minimum norm solution. Let $\beta^{(t)}$ be the parameters found by the GD algorithm at time step $t$. Recall that at step $t$, the gradient descent algorithm update the parameters in the following way
+\begin{equation}
+	\beta^{(t)}=\beta^{(t-1)}-\eta\nabla J(\beta^{(t-1)})=\beta^{(t-1)}-\frac{\eta}{n} X^\top (X\beta^{(t-1)}-\vec{y}).
+\end{equation}
+As in sub-question (a), we also assume $X X^\top$ is an invertible matrix. \textbf{Prove} that if the GD algorithm  with zero initialization converges to a solution $\hat{\beta}$ satisfying $J(\hat{\beta})=0$, then $\hat{\beta}=X^\top(XX^\top)^{-1}\vec{y}=\rho,$, that is, $\hat{\beta}$ is the minimum norm solution.
+
+\emph{Hint:} As a first step, you can prove by induction that if we start with zero initialization, $\beta^{(t)}$ will always be a linear combination of $\{x^{(1)}, x^{(2)}, \cdots, x^{(n)}\}$ for any $t\ge 0.$ Then, for any $t\ge 0$, you can write $\beta^{(t)}=X^\top v^{(t)}$ for some $v^{(t)}\in \R^{n}.$ As a second step, you can prove that if $\hat{\beta}=X^\top v^{(t)}$ for some $v^{(t)}$ and $J(\hat{\beta})=0$, then we have $\hat{\beta}=\rho.$
+
+You don't necessarily have to follow the steps in this hint. But if you use the hint, you need to prove the statements in the hint.
