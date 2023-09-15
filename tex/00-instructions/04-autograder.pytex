@@ -1,0 +1,90 @@
+🐍
+import json
+
+# Load the points.json for that assignment
+with open(f'../points.json', 'r') as f:
+  points = json.load(f)
+
+# Load the meta.json for this assignment
+with open(f'../meta.json', 'r') as f:
+  meta = json.load(f)
+
+has_coding = len([q for q in points.values() if not q['is_written']]) > 0
+
+if has_coding and not meta['multifile_coding_submission']:
+  print(R'''{\bf Writing Code and Running the Autograder}
+
+All your code should be entered into |src/submission.py|. When editing |src/submission.py|, please only make changes between the lines containing
+|### START_CODE_HERE ###| and |### END_CODE_HERE ###|. Do not make changes to
+% The astute reader will notice that there are underscores in the
+% START_CODE_HERE and END_CODE_HERE flags, while the source files actually
+% contain spaces.  This is because our solution sanitization script will
+% otherwise recognize this tag and attempt to delete it.  The underscores are a
+% simple way to prevent this.
+files other than |src/submission.py|.
+
+The unit tests in |src/grader.py| (the autograder) will be used to verify a correct submission.
+Run the autograder locally using the following terminal command within the
+|src/| subdirectory:
+\begin{lstlisting}
+$ python grader.py
+\end{lstlisting}
+
+There are two types of unit tests used by the autograder:
+\begin{itemize}
+  \item |basic|:  These tests are provided to make sure that your inputs and outputs are on the right track, and that the hidden evaluation tests will be able to execute.
+  \item |hidden|: These unit tests are the evaluated elements of the assignment, and run your code with more complex inputs and corner cases. Just because your code passed the basic local tests does not necessarily mean that they will pass all of the hidden tests. These evaluative hidden tests will be run when you submit your code to the Gradescope autograder via the online student portal, and will provide feedback on how many points you have earned.
+\end{itemize}
+
+For debugging purposes, you can run a single unit test locally.  For example, you
+can run the test case |3a-0-basic| using the following terminal command within
+the |src/| subdirectory:
+\begin{lstlisting}
+$ python grader.py 3a-0-basic
+\end{lstlisting}
+
+Before beginning this course, please walk through the
+\href{https://github.com/scpd-proed/General_Handouts/blob/master/Anaconda_Setup.pdf}{Anaconda
+Setup for XCS Courses} to familiarize yourself with
+the coding environment.  Use the env defined in |src/environment.yml|
+to run your code.  This is the same environment used by the online autograder.''')
+
+if has_coding and meta['multifile_coding_submission']:
+  print(R'''{\bf Writing Code and Running the Autograder}
+
+All your code should be entered into the |src/submission/| directory. When editing files in |src/submission/|, please only make changes between the lines containing
+|### START_CODE_HERE ###| and |### END_CODE_HERE ###|. Do not make changes to
+% The astute reader will notice that there are underscores in the
+% START_CODE_HERE and END_CODE_HERE flags, while the source files actually
+% contain spaces.  This is because our solution sanitization script will
+% otherwise recognize this tag and attempt to delete it.  The underscores are a
+% simple way to prevent this.
+files outside the |src/submission/| directory.
+
+The unit tests in |src/grader.py| (the autograder) will be used to verify a correct submission.
+Run the autograder locally using the following terminal command within the
+|src/| subdirectory:
+\begin{lstlisting}
+$ python grader.py
+\end{lstlisting}
+
+There are two types of unit tests used by the autograder:
+\begin{itemize}
+  \item |basic|:  These tests are provided to make sure that your inputs and outputs are on the right track, and that the hidden evaluation tests will be able to execute.
+  \item |hidden|: These unit tests are the evaluated elements of the assignment, and run your code with more complex inputs and corner cases. Just because your code passed the basic local tests does not necessarily mean that they will pass all of the hidden tests. These evaluative hidden tests will be run when you submit your code to the Gradescope autograder via the online student portal, and will provide feedback on how many points you have earned.
+\end{itemize}
+
+For debugging purposes, you can run a single unit test locally.  For example, you
+can run the test case |3a-0-basic| using the following terminal command within
+the |src/| subdirectory:
+\begin{lstlisting}
+$ python grader.py 3a-0-basic
+\end{lstlisting}
+
+Before beginning this course, please walk through the
+\href{https://github.com/scpd-proed/General_Handouts/blob/master/Anaconda_Setup.pdf}{Anaconda
+Setup for XCS Courses} to familiarize yourself with
+the coding environment.  Use the env defined in |src/environment.yml|
+to run your code.  This is the same environment used by the online autograder.''')
+🐍
+
